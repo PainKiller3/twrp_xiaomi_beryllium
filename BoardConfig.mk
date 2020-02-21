@@ -48,7 +48,7 @@ BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+TARGET_CRYPTFS_HW_PATH := device/xiaomi/beryllium/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Kernel
