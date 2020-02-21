@@ -50,6 +50,8 @@ BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 TW_INCLUDE_CRYPTO := true
 TARGET_CRYPTFS_HW_PATH := device/xiaomi/beryllium/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
+PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2099-12-31
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true loop.max_part=16 androidboot.usbcontroller=a600000.dwc3 androidboot.selinux=permissive
