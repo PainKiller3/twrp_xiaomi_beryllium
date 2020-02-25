@@ -6,10 +6,11 @@ For building TWRP for Xiaomi PocoPhone F1
 Works:
 
 - ADB
+- Decryption of /data
 - Screen brightness settings
 - Now UI is very smooth
 - Vibration on touch
-- Correct screenshot color 
+- Correct screenshot color
 
 ## Compile
 
@@ -23,7 +24,7 @@ repo sync
 Then add these projects to .repo/manifest.xml:
 
 ```xml
-<project path="device/xiaomi/beryllium" name="mauronofrio/android_device_xiaomi_beryllium" remote="github" revision="android-9.0" />
+<project path="device/xiaomi/beryllium" name="PainKiller3/twrp_xiaomi_beryllium-new" remote="github" revision="android-9.0" />
 ```
 
 Finally execute these:

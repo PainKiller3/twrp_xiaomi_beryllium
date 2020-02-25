@@ -22,11 +22,11 @@ $(call inherit-product, build/target/product/embedded.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-## Device identifier. This must come after all inclusions
+# Device identifier. This must come after all inclusions.
 PRODUCT_NAME := omni_beryllium
 PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Pocophone F1
+PRODUCT_MODEL := POCO F1
 PRODUCT_MANUFACTURER := Xiaomi
 
 TARGET_VENDOR_PRODUCT_NAME := beryllium
