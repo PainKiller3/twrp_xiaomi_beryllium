@@ -1,8 +1,0 @@
-[
-  {
-    "remote": "github",
-    "repository": "GtrCraft/twrp_kernel_xiaomi_sdm845",
-    "target_path": "kernel/xiaomi/sdm845",
-    "revision": "android-9.0"
-  }
-]
