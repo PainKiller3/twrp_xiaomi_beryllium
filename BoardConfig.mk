@@ -53,6 +53,13 @@ TARGET_HW_DISK_ENCRYPTION := true
 PLATFORM_VERSION := 16.1.0
 PLATFORM_SECURITY_PATCH := 2099-12-31
 
+# Ramdisk
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
+    /vendor/bt_firmware:/bt_firmware \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true loop.max_part=16 androidboot.usbcontroller=a600000.dwc3 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
@@ -88,6 +95,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_OTA_ASSERT_DEVICE := beryllium
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+RECOVERY_GRAPHICS_USE_LINELENGTH  := true
+RECOVERY_VARIANT := twrp
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -112,6 +121,13 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_USE_QCOM_HAPTICS_VIBRATOR := true
 TW_USE_LEDS_HAPTICS := true
 TW_USE_TOOLBOX := true
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
+TW_EXCLUDE_TWRPAPP := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_NEW_ION_HEAP := true
+TW_INCLUDE_FB2PNG := true
+TWRP_NEW_THEME := true
 
 # exFAT FS Support
 TW_INCLUDE_FUSE_EXFAT := true
