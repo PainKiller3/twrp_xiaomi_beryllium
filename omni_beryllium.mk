@@ -17,20 +17,28 @@
 # Release name
 PRODUCT_RELEASE_NAME := beryllium
 
-$(call inherit-product, build/target/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := beryllium
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
+
+# Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_beryllium
+PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := POCOPHONE F1
+PRODUCT_MODEL := POCO F1
 PRODUCT_MANUFACTURER := Xiaomi
 
-# enable stock zip packages flash
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.secure=1 \
-    ro.adb.secure=0 \
-    ro.allow.mock.location=0
+TARGET_VENDOR_PRODUCT_NAME := beryllium
+TARGET_VENDOR_DEVICE_NAME := beryllium
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=beryllium \
+    BUILD_PRODUCT=beryllium \
+    PRODUCT_NAME=beryllium

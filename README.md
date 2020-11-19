@@ -1,48 +1,25 @@
 # android_device_xiaomi_beryllium
-For building TWRP for Xiaomi PocoPhone F1
 
-## Features
+TWRP device tree for Xiaomi POCO/POCOPHONE F1
 
-Works:
+The Xiaomi Poco/Pocophone F1 (codenamed _"beryllium"_) is a high-end smartphone from Xiaomi.
 
-- ADB
-- Screen brightness settings
-- Now UI is very smooth
-- Vibration on touch
-- Correct screenshot color 
+Release date was August 2018.
 
-## Compile
+## Device specifications
 
-First checkout minimal twrp with omnirom tree:
+Basic   | Spec Sheet
+-------:|:-------------------------
+SoC     | Qualcomm SDM845 Snapdragon 845
+CPU     | Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.8 GHz Kryo 385 Silver)
+GPU     | Adreno 630
+Memory  | 6/8 GB RAM
+Shipped Android Version | 8.1 with MIUI 9
+Storage | 64/128/256 GB
+Battery | Non-removable Li-Po 4000 mAh battery
+Display | 1080 x 2246 pixels, IPS LCD, 18.7:9 ratio (~403 ppi density)
+Camera  | 12 MP, f/1.9, 1/2.55", 1.4µm, dual pixel PDAF, 5 MP, f/2.0, (depth)
 
-```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-repo sync
-```
+## Device picture
 
-Then add these projects to .repo/manifest.xml:
-
-```xml
-<project path="device/xiaomi/beryllium" name="mauronofrio/android_device_xiaomi_beryllium" remote="github" revision="android-9.0" />
-```
-
-Finally execute these:
-
-```
-. build/envsetup.sh
-lunch omni_beryllium-eng
-mka adbd recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
-```
-
-To test it:
-
-```
-fastboot boot out/target/product/beryllium/recovery.img
-```
-## Contributors
-
-[Here](https://github.com/TeamWin/android_device_xiaomi_polaris/graphs/contributors)
-
-## Thanks
-
-- Thanks to @notsyncing for the base: https://github.com/notsyncing/android_device_xiaomi_polaris
+![Xiaomi POCO F1](https://xiaomi-mi.com/uploads/CatalogueImage/pvm_02k_17131_1534951297.jpg)
