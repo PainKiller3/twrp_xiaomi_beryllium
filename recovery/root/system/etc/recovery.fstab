@@ -2,13 +2,15 @@
 # The filesystem that contains the filesystem e2fsck binary (typically /system) cannot
 # specify 'check', and must come before any filesystems that do specify 'check'
 
-# NOTE: /system and /vendor partitions are early-mounted and the fstab entry is specified in device tree (duplicated below for recovery image purposes only):
+# NOTE: /system, /system_ext and /vendor partitions are early-mounted and the fstab entry is specified in device tree (duplicated below for recovery image purposes only):
 #       /proc/device-tree/firmware/android/fstab/system
+#       /proc/device-tree/firmware/android/fstab/system_ext
 #       /proc/device-tree/firmware/android/fstab/vendor
 
 #<src>                                      <mnt_point>             <type>  <mnt_flags and options>                                                                           <fs_mgr_flags>
 /dev/block/bootdevice/by-name/cache          /cache                  ext4    noatime,nosuid,nodev,barrier=1                                                                    wait
 /dev/block/bootdevice/by-name/misc           /misc                   emmc    defaults                                                                                          defaults
 /dev/block/bootdevice/by-name/system         /system                 ext4    ro,barrier=1                                                                                      wait,recoveryonly
+/dev/block/bootdevice/by-name/cust           /system_ext             ext4    ro,barrier=1                                                                                      wait,recoveryonly
 /dev/block/bootdevice/by-name/vendor         /vendor                 ext4    ro,barrier=1                                                                                      wait,recoveryonly
 /dev/block/bootdevice/by-name/userdata       /data                   ext4    noatime,nosuid,nodev,barrier=0,noauto_da_alloc                                                    latemount,wait,check,fileencryption=ice,quota,encryptable=footer
